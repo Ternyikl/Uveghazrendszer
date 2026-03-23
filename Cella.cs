@@ -76,5 +76,13 @@ namespace Uveghazrendszer
 			this.riasztas = null;
 			Console.WriteLine($"A {this.pozicio[0]}:{this.pozicio[1]} pozición lévő cella ki lett kapálva.");
 		}
+
+		public void CellaErtekelo()
+		{
+			if(this.noveny == null)
+			{
+				return;
+			}
+		}
 	}
 }
