@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adattar.cs" />
     <Compile Include="Beavatkozas.cs" />
     <Compile Include="Cella.cs" />
     <Compile Include="Enumok.cs" />
