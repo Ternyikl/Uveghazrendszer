@@ -40,8 +40,41 @@ namespace Uveghazrendszer
 			{
 				this.noveny = noveny;
 				this.egyedszam = mennyiseg;
-				Console.WriteLine($"");
+				Console.WriteLine($"A {this.noveny}-ből {this.egyedszam} be lett öltetve a {this.pozicio[0]}:{this.pozicio[1]} pozicióra");
 			}
+			else
+			{
+				if(noveny == this.noveny)
+				{
+					this.egyedszam += mennyiseg;
+					Console.WriteLine($"A {this.noveny}-hez {mennyiseg} hozzá let öltetve a {this.pozicio[0]}:{this.pozicio[1]} pozicióra");
+				}
+				else
+				{
+					Console.WriteLine($"A {this.pozicio[0]}:{this.pozicio[1]} pozición egy másik növény már szerepel");
+				}
+			}
+		}
+
+		public void Noveles(int mennyiseg)
+		{
+			this.egyedszam += mennyiseg;
+			Console.WriteLine($"{mennyiseg} hozzá lett adva a {this.noveny} ültetvényhez.");
+		}
+
+		public void Csokentes(int mennyiseg)
+		{
+			this.egyedszam -= mennyiseg;
+			Console.WriteLine($"{mennyiseg} ki lett kapálva a {this.noveny} ültetvényből.");
+		}
+
+		public void Urit()
+		{
+			this.egyedszam = 0;
+			this.noveny = null;
+			this.szenzorok = null;
+			this.riasztas = null;
+			Console.WriteLine($"A {this.pozicio[0]}:{this.pozicio[1]} pozición lévő cella ki lett kapálva.");
 		}
 	}
 }
