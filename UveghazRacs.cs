@@ -49,6 +49,26 @@ namespace Uveghazrendszer
 			return cellak;
 		}
 
+		public Cella Urescella()
+		{
+			Cella urescella = null;
+
+			for (int i = 0; i < racs.GetLength(0); i++)
+			{
+				for (int j = 0; j < racs.GetLength(1); j++)
+				{
+					if (racs[i,j].Ures() == true)
+					{
+						urescella = racs[i,j];
+						return urescella;
+					}
+				}
+			}
+
+			Console.WriteLine("Az üveg házban nincs üres cella");
+			return urescella;
+		}
+
 		public void TerkepKiir()
 		{
 			for (int i = 0; i < racs.GetLength(0); i++)

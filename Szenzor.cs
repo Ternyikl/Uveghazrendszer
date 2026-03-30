@@ -11,13 +11,11 @@ namespace Uveghazrendszer
 		private Random rnd = new Random();
 
 		private string azonosito;
-		private Cella cella;
 		private Meres meresek;
 
-		public Szenzor(string azonosito, Cella cella)
+		public Szenzor(string azonosito)
 		{
 			this.azonosito = azonosito;
-			this.cella = cella;
 		}
 
 		public string Azonosito { get => azonosito; set => azonosito = value; }
@@ -32,6 +30,5 @@ namespace Uveghazrendszer
 
 			}
 		}
-		internal Cella Cella { get => cella; set => cella = value; }
 	}
 }

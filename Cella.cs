@@ -34,7 +34,8 @@ namespace Uveghazrendszer
 			return  (egyedszam == 0) ? true : false;
 		}
 
-		public void Telepit(Novenyfaj noveny, int mennyiseg)
+		public void
+			Telepit(Novenyfaj noveny, int mennyiseg)
 		{
 			if(Ures())
 			{
@@ -79,9 +80,13 @@ namespace Uveghazrendszer
 
 		public void CellaErtekelo()
 		{
-			if(this.noveny == null)
+			if(Ures())
 			{
 				return;
+			}
+			else
+			{
+
 			}
 		}
 	}

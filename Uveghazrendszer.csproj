@@ -50,6 +50,7 @@
     <Compile Include="Kezelo.cs" />
     <Compile Include="Meres.cs" />
     <Compile Include="Novenyfaj.cs" />
+    <Compile Include="NovenyKezelo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Riasztasok.cs" />
