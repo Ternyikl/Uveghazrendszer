@@ -12,7 +12,7 @@ namespace Uveghazrendszer
 		private List<UveghazRacs> uveghaz;
 		private List<Beavatkozas> beavatkozas;
 
-		public Adattar(List<Kezelo> kezelo, List<UveghazRacs> uveghaz, List<Riasztasok> riasztasok, List<Beavatkozas> beavatkozas)
+		public Adattar(List<Kezelo> kezelo, List<UveghazRacs> uveghaz, List<Beavatkozas> beavatkozas)
 		{
 			this.kezelo = kezelo;
 			this.uveghaz = uveghaz;

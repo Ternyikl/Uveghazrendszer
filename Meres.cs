@@ -8,15 +8,16 @@ namespace Uveghazrendszer
 {
 	internal class Meres
 	{
+		private Random rnd = new Random();
 		private double nedevesseg;
 		private double homerseklet;
 		private double suruseg;
 
-		public Meres(double nedevesseg, double homerseklet, double suruseg)
+		public Meres()
 		{
-			this.nedevesseg = nedevesseg;
-			this.homerseklet = homerseklet;
-			this.suruseg = suruseg;
+			this.nedevesseg = rnd.NextDouble() * 100;
+			this.homerseklet = rnd.NextDouble() * 60;
+			this.suruseg = rnd.NextDouble() * 100;
 		}
 
 		public double Nedevesseg { get => nedevesseg; set => nedevesseg = value; }

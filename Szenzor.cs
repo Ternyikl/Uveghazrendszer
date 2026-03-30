@@ -16,19 +16,10 @@ namespace Uveghazrendszer
 		public Szenzor(string azonosito)
 		{
 			this.azonosito = azonosito;
+			this.meresek = new Meres();
 		}
 
 		public string Azonosito { get => azonosito; set => azonosito = value; }
-		public Meres Meresek 
-		{ 
-			get => meresek;
-			set
-			{
-				meresek.Nedevesseg = rnd.NextDouble() * 100;
-				meresek.Homerseklet = rnd.NextDouble() * 60;
-				meresek.Suruseg = rnd.NextDouble() * 100;
-
-			}
-		}
+		internal Meres Meresek { get => meresek; set => meresek = value; }
 	}
 }

@@ -14,13 +14,13 @@ namespace Uveghazrendszer
 		private Szenzor szenzorok;
 		private List<Riasztasok> riasztas;
 
-		public Cella(int[] pozicio, Novenyfaj noveny, int egyedszam, Szenzor szenzorok, List<Riasztasok> riasztas)
+		public Cella(int[] pozicio, Novenyfaj noveny, int egyedszam, Szenzor szenzorok)
 		{
 			this.pozicio = pozicio;
 			this.noveny = noveny;
 			this.egyedszam = egyedszam;
 			this.szenzorok = szenzorok;
-			this.riasztas = riasztas;
+			this.riasztas = new List<Riasztasok>();
 		}
 
 		public int[] Pozicio { get => pozicio; set => pozicio = value; }
@@ -80,11 +80,8 @@ namespace Uveghazrendszer
 
 		public void CellaErtekelo()
 		{
-			if(Ures())
-			{
-				return;
-			}
-			else
+			riasztas.Clear();
+			if(!Ures())
 			{
 				double seged = 0;
 				#region nedvesseg

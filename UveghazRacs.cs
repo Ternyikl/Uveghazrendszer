@@ -11,10 +11,19 @@ namespace Uveghazrendszer
 		private int meret;
 		private Cella[,] racs;
 
-		public UveghazRacs(int meret, Cella[,] racs)
+		public UveghazRacs(int meret, List<Cella> lista)
 		{
 			this.meret = meret;
-			this.racs = racs;
+
+			int counter = 0;
+			for (int i = 0; i < meret; i++)
+			{
+				for (int j = 0; j < meret; j++)
+				{
+					this.racs[i,j] = lista[counter++];
+				}
+			}
+
 		}
 
 		public int Meret { get => meret; set => meret = value; }
@@ -86,7 +95,6 @@ namespace Uveghazrendszer
 			if (racs[x,y].Ures())
 			{
 				Console.WriteLine("A megadott cella üres!");
-				return;
 			}
 			else
 			{
@@ -94,26 +102,38 @@ namespace Uveghazrendszer
 				{
 					case Problema.Nedvesség_alacsony:
 						racs[x, y].Szenzorok.Meresek.Nedevesseg += ertek;
+						racs[x, y].Riasztas.Clear();
+						racs[x, y].CellaErtekelo();
 						break;
 
 					case Problema.Nedvesség_magas:
 						racs[x, y].Szenzorok.Meresek.Nedevesseg += ertek;
+						racs[x, y].Riasztas.Clear();
+						racs[x, y].CellaErtekelo();
 						break;
 
 					case Problema.Hőmérséklet_alacsony:
 						racs[x, y].Szenzorok.Meresek.Homerseklet += ertek;
+						racs[x, y].Riasztas.Clear();
+						racs[x, y].CellaErtekelo();
 						break;
 
 					case Problema.Hőmérséklet_magas:
 						racs[x, y].Szenzorok.Meresek.Homerseklet += ertek;
+						racs[x, y].Riasztas.Clear();
+						racs[x, y].CellaErtekelo();
 						break;
 
 					case Problema.Sűrűség_ritka:
 						racs[x, y].Noveles((int)ertek);
+						racs[x, y].Riasztas.Clear();
+						racs[x, y].CellaErtekelo();
 						break;
 
 					case Problema.Sűrűség_tömött:
 						racs[x, y].Csokkentes((int)ertek);
+						racs[x, y].Riasztas.Clear();
+						racs[x, y].CellaErtekelo();
 						break;
 
 					default:
