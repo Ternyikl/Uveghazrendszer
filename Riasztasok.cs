@@ -12,26 +12,25 @@ namespace Uveghazrendszer
 		private Problema tipus;
 		private string leiras;
 		private Sulyossag sulyossag;
-		private Cella cella;
+		private int counter;
 
-		public Riasztasok(string azonosito, Problema tipus, string leiras, Sulyossag sulyossag, Cella cella)
+		public Riasztasok(Problema tipus, string leiras, Sulyossag sulyossag)
 		{
-			this.azonosito = azonosito;
+			this.counter = 1;
+			this.azonosito = counter++.ToString();
 			this.tipus = tipus;
 			this.leiras = leiras;
 			this.sulyossag = sulyossag;
-			this.cella = cella;
 		}
 
 		public string Azonosito { get => azonosito; set => azonosito = value; }
 		public string Leiras { get => leiras; set => leiras = value; }
 		internal Problema Tipus { get => tipus; set => tipus = value; }
 		internal Sulyossag Sulyossag { get => sulyossag; set => sulyossag = value; }
-		internal Cella Cella { get => cella; set => cella = value; }
 
 		public override string ToString()
 		{
-			return $"{this.azonosito}: {this.cella.Pozicio} - {this.tipus}({this.sulyossag})\n\tLeírás: {this.leiras}";
+			return $"{this.azonosito}: {this.tipus}({this.sulyossag})\n\tLeírás: {this.leiras}";
 		}
 	}
 }

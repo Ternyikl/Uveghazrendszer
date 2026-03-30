@@ -15,9 +15,12 @@ namespace Uveghazrendszer
 
 	enum Problema
 	{
-		Nedvesség,
-		Hőmérséklet,
-		Sűrűség
+		Nedvesség_alacsony,
+		Nedvesség_magas,
+		Hőmérséklet_alacsony,
+		Hőmérséklet_magas,
+		Sűrűség_ritka,
+		Sűrűség_tömött
 	}
 
 	enum Sulyossag
