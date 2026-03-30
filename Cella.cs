@@ -63,7 +63,7 @@ namespace Uveghazrendszer
 			Console.WriteLine($"{mennyiseg} hozzá lett adva a {this.noveny} ültetvényhez.");
 		}
 
-		public void Csokentes(int mennyiseg)
+		public void Csokkentes(int mennyiseg)
 		{
 			this.egyedszam -= mennyiseg;
 			Console.WriteLine($"{mennyiseg} ki lett kapálva a {this.noveny} ültetvényből.");

@@ -80,5 +80,47 @@ namespace Uveghazrendszer
 				Console.Write("\n");
 			}
 		}
+
+		public void Beavatkozo(int x, int y, Problema problema, double ertek)
+		{
+			if (racs[x,y].Ures())
+			{
+				Console.WriteLine("A megadott cella üres!");
+				return;
+			}
+			else
+			{
+				switch(problema)
+				{
+					case Problema.Nedvesség_alacsony:
+						racs[x, y].Szenzorok.Meresek.Nedevesseg += ertek;
+						break;
+
+					case Problema.Nedvesség_magas:
+						racs[x, y].Szenzorok.Meresek.Nedevesseg += ertek;
+						break;
+
+					case Problema.Hőmérséklet_alacsony:
+						racs[x, y].Szenzorok.Meresek.Homerseklet += ertek;
+						break;
+
+					case Problema.Hőmérséklet_magas:
+						racs[x, y].Szenzorok.Meresek.Homerseklet += ertek;
+						break;
+
+					case Problema.Sűrűség_ritka:
+						racs[x, y].Noveles((int)ertek);
+						break;
+
+					case Problema.Sűrűség_tömött:
+						racs[x, y].Csokkentes((int)ertek);
+						break;
+
+					default:
+						Console.WriteLine("Hibás érték");
+						break;
+				}
+			}
+		}
 	}
 }
